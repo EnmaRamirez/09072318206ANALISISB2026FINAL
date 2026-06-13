@@ -64,12 +64,13 @@ El archivo render.yaml ya está preparado para desplegar la API como servicio We
 
 Pasos exactos para terminarlo en Render:
 1. Abre https://dashboard.render.com/ y entra a New > Web Service.
-2. Conecta tu repositorio GitHub: EnmaRamirez/09072318206ANALISISB2026FINAL.
-3. Render debería detectar el archivo render.yaml automáticamente.
-4. Si no lo detecta, usa estos valores manuales:
-   - Build Command: dotnet publish NetGuardGT.Api/NetGuardGT.Api.csproj -c Release -o publish
-   - Start Command: dotnet ./publish/NetGuardGT.Api.dll
-5. Confirma el despliegue y espera a que termine el build.
+2. Como la interfaz de Render solo muestra opciones como Docker, Go, Node, Python, etc., selecciona la opción Docker para este proyecto.
+3. Conecta tu repositorio GitHub: EnmaRamirez/09072318206ANALISISB2026FINAL.
+4. Render debería detectar el archivo render.yaml automáticamente.
+5. Si no lo detecta, usa estas opciones manuales:
+   - Runtime / Environment: Docker
+   - Dockerfile Path: ./Dockerfile
+6. Confirma el despliegue y espera a que termine el build.
 
 Nota: la URL final quedará disponible en el panel de Render una vez termine el despliegue.
 
