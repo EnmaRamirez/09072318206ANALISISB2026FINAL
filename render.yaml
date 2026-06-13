@@ -3,6 +3,11 @@ services:
     name: netguardgt-api
     env: dotnet
     plan: free
-    buildCommand: dotnet publish -c Release -o publish
-    startCommand: dotnet publish/NetGuardGT.Api.dll
     autoDeploy: true
+    buildCommand: dotnet publish NetGuardGT.Api/NetGuardGT.Api.csproj -c Release -o publish
+    startCommand: dotnet ./publish/NetGuardGT.Api.dll
+    envVars:
+      - key: ASPNETCORE_URLS
+        value: http://0.0.0.0:$PORT
+      - key: ASPNETCORE_ENVIRONMENT
+        value: Production

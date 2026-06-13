@@ -1,4 +1,4 @@
-# CARNET_ANALISISB2026FINAL
+# 09072318206_ANALISISB2026FINAL
 
 Proyecto de prototipo de API REST para la gestión de incidentes de red de NetGuard GT, desarrollado en C# con ASP.NET Core 8, EF Core + SQLite y pruebas xUnit.
 
@@ -60,14 +60,18 @@ Implementar un prototipo funcional para:
 
 ## Despliegue en Render
 
-El archivo render.yaml está preparado para desplegar la API como servicio Web.
+El archivo render.yaml ya está preparado para desplegar la API como servicio Web.
 
-Pasos recomendados:
-1. Crear un repositorio en GitHub con el nombre CARNET_ANALISISB2026FINAL.
-2. Subir el contenido de esta carpeta.
-3. Crear un servicio Web en Render usando el repositorio.
-4. Configurar el comando de build: dotnet publish -c Release
-5. El render.yaml define el inicio del servicio con la DLL publicada.
+Pasos exactos para terminarlo en Render:
+1. Abre https://dashboard.render.com/ y entra a New > Web Service.
+2. Conecta tu repositorio GitHub: EnmaRamirez/09072318206ANALISISB2026FINAL.
+3. Render debería detectar el archivo render.yaml automáticamente.
+4. Si no lo detecta, usa estos valores manuales:
+   - Build Command: dotnet publish NetGuardGT.Api/NetGuardGT.Api.csproj -c Release -o publish
+   - Start Command: dotnet ./publish/NetGuardGT.Api.dll
+5. Confirma el despliegue y espera a que termine el build.
+
+Nota: la URL final quedará disponible en el panel de Render una vez termine el despliegue.
 
 ## Prueba rápida con Swagger
 
